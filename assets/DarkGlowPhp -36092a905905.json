@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "darkglowphp",
+  "private_key_id": "36092a90590502a05937e4df7a4728b340fb5402",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQD1pRSZz8QcZ+l9\nIRCLU2CaXHYiCdnadoPARy7ey6yJGkMl3uRwU+Cl3NXC8ONn2xnsVokZgY3+2Jl4\nsZvyqkppy7AX55I3146bhhE3CjWvLe+yDdvW2YLqZdsVEK6AFIAG8TIOqWNLZyFt\ni59dom22L9G+QAItnXBe3EPlk6YiXGqSMkDwdPOhuMyTdMq+Fk9MyQM1HXmacCen\nrMxcVTu37Z3cKBoL6I/3tp1MMX2gdEP4tEZbJQ9spKw0MUIl55zLqaeHq0D1evFV\n4ZHOwM2HVRoiBWUKrddKZo7+ZrR4UmGlEufpr8WoeswKiqxtZcemaWwE2HP46naf\nqhblM0AlAgMBAAECggEAAl3yWl8RpTJtIgsJBUaq5iHg84gDxOKid15YOcZdpb6O\nihVhPyHXxtFfb+7xSgVm9QuKa6f/bca5h9uyRH7Wk7lmO3y8QHR/x8jdbpnXFZaM\nOjt+9E2JQOf1WfkcrVhFOYvmbxS7w7S9MjiHsxfHFdvVGg+01aqwNAHMV7B6B9e2\nS+Udm2CI+rH39FyAY9Tsjyo4zDNWkQPl0/F0aC0438kcYTTpEo46TTktlhcOZKqJ\nwsE8qUlX5ilO2pRbDEjoSrI3rCt5q1qZ89648CTkgzDBbayMtpMIRMGmTbSaVvhx\nPMxZWoDMbq0rJ1nOrJWrNTiBog8GL6SxxDlOgOy1uwKBgQD9z0jhNhMZpT4roC0e\nnP8kkYIUpg92ZtLpuetuBHW2POk3DGNDOGYk1gkX2P27FquvtC2YQToyJuXqAEGw\nAguyZgdPqwzxXeGwiGYqWOoBSmcksvFzUdQ/QWwOvl4LXlu+w3TRdN1OmIdy0qZp\nazIFEMyxsNrMzm7HiOMWXqo43wKBgQD3w8INCFxv4o46qOjp0LJ5IyTlEFEysORz\nTRvUdZ3UHzQrfy674cdkQoWrCsIOdSMCadKFWcN3hOauyj+VH57f0KbbDJizYsn6\nRwa7Oekt5uEkFOOL66BLtLEaJvAd0oBh7B9X/FyGRjsrmtI2SGW02J3M8wpSxzZm\nWw4OAxqzewKBgQDbGRsyvrlSRCEdC9KnQKPH74w5QvjKHw0nEoW3nUX4ITC5gooV\ntxQF7HZBDeJKpNFkhcduTbBtJsMGc15BECMEx6q8DU7I9WAkQjrfh43Ju266cXaZ\nNCRizpj3SUJp0fSlAplPTvDULjuO1WUuT4kIcm4hXigi8HkU6ogOAX40RQKBgQCb\npPw4V7JKDxauPwHiMFqNwsggpfl8UKeSzzPWafS2FswdLw5atOEfWLLD2kRB9NAD\nahr37oXehTytPRxoP678hwTqwqUCu+KKOSg/YYfccBerJPw1H9ZY+K/w79kTwvMn\nkL+39C7joyb0o5O+yggqbZHj+CHaEo9YCYdwwf56FQKBgQCyGhmUbhM1whDSfygJ\n8NjN6z3K9zjGpBd00eqDA9MrQ9VpQOOVpVEOMOP2OL9xxTL8uyHL6iCI+AvvjhLc\nLW6rVXfSvyuHUxjYDFdmvONukh/Tgc5aSkVaxxEL1PuJnD48VSSnpbwo2EjLLHk4\n+I0tKFqlXZYKHsrKENf2NMxIcA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "darkglowtable@darkglowphp.iam.gserviceaccount.com",
+  "client_id": "117898887822687511414",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/darkglowtable%40darkglowphp.iam.gserviceaccount.com"
+}

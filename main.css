@@ -1,0 +1,259 @@
+
+body{
+    background-image: url("/oboik.ru_34657.jpg");
+    background-size:cover ;
+    background-repeat: no-repeat;
+}
+/* Хэдэр */
+header{
+    background-color: rgba(5, 10, 5, 0.98);
+}
+
+.headerImg {
+
+    height: 300px;
+    text-align: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("/header.png");
+}
+
+/* Меню в хэдэре */
+.pages_menu  {
+  /* background-color: rgba(245, 245, 220, 0.67);
+    */border: solid black 1px;
+    text-align: center;
+
+}
+
+.pages_menu li {
+    width: 217px;
+    height: 42px;
+    font-size: 12px;
+    background-image: url(/menubatton3.png);
+    background-size: 214px 57px;
+    background-repeat: no-repeat;
+    background-position: 1px -3px;
+    text-align: center;
+    line-height: 20px;
+    display: inline-block;
+    list-style: none;
+    margin: 3px;
+    padding-top: 12px;
+}
+
+
+
+.pages_menu li a {
+
+
+    text-decoration: none;
+    color: rgba(242, 10, 11, 0.86);
+    font-family: 'Rurintania', serif;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px #383838;
+    font-size: 18px;
+}
+.pages_menu li:hover {
+  /*  background-color: rgba(255, 118, 59, 0.45);
+*/}
+.pages_menu li a:hover {
+    color: rgb(0, 0, 0);
+
+}
+.pages_menu li a:hover:after {
+
+background-image: url("Skeleton-Head-Free-PNG-Image.png");
+    display:inline-block;
+    background-size: 17px, 17px;
+    background-position: 0px -1px;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 17px;
+    vertical-align: middle;
+    margin-left: 3px;
+    content: "";
+
+
+}
+.pages_menu li a:active {
+    color: rgb(0, 0, 0);
+
+    /*Футер*/
+}
+.footer {
+
+    background-color: rgb(115, 147, 108);
+}
+
+
+.copyrighter{
+    font-size: 10px;
+    color: rgba(129, 129, 129, 0.6);
+}
+
+.footer_menu li
+{   list-style-type: none;
+    font-style: italic;
+
+}
+
+.footer_menu  a {
+    text-decoration: none;
+}
+.footer_menu li a:hover {
+    color: black;
+}
+
+.footer_menu a:active{
+    color: black;
+}
+ /*Подключение шрифта*/
+@font-face {
+
+    font-family: "Rurintania";
+    src: url("/fonts/moyenage_[allfont.ru].ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+/*Страница войны*/
+.warname{
+    text-align: center;
+}
+.pointstable {
+    height: 205px;
+    padding-right: 40px;
+    padding-top: 27px;
+    background-image: url(/ramka.png);
+    background-size: 685px 226px;
+    background-repeat: no-repeat;
+    background-position: center 3px;
+    text-align: center;
+}
+.pointstable li  {
+    list-style-type: none;
+    display: inline-block;
+
+
+}
+.pointstable li h4, .pointstable li h3 {
+    width: 180px;
+    height: 40px;
+    border: solid black 1px;
+    text-align: center;
+    line-height:40px;
+}
+
+.pointstable li h4{
+    background-color: gainsboro;
+    font-weight: 600;
+}
+
+.enemy, .our , .points{
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.99);
+}
+.enemy{
+    background-color: rgba(0, 0, 255, 0.55);
+}
+
+.our {
+    background-color: rgba(255, 0, 0, 0.58);
+}
+.points {
+    background-color: #46c663;
+}
+.points + h4 {
+    color:red;
+}
+.points:hover +h4,.enemy:hover +h4,.our:hover +h4, .points +h4:hover,.enemy +h4:hover,.our +h4:hover {
+    background-color: white;
+    color:blue;
+}
+
+.warinfo{
+
+    padding-right: 40px;
+    text-align: center;
+}
+
+
+.warinfo li {
+
+    list-style-type: none;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.45);
+}
+.warinfo li h3, .warinfo li h4 {
+    line-height:40px;
+    width: 180px;
+    height: 40px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border: solid black 1px;
+    text-align: center;
+
+}
+.warNamesDiv{
+
+    padding-right: 40px;
+    text-align: center;
+}
+
+.warNamesDiv li{
+    font-weight: 900;
+    padding-top: -10px;
+    padding-bottom: 10px;
+    height: 100px;
+    width: 130px;
+    margin: auto;
+    display: inline-block;
+    list-style-type: none;
+    color: #000000;
+    background-color: beige;
+
+
+    border: solid black 1px;
+
+}
+
+.warnames  {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.warnames p:after{
+    margin-top: 1px;
+    margin-bottom: -55px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    display: block;
+    width: 100px;
+    height: 37px;
+    content: "";
+    background-image: url(/plan.gif);
+    background-position: 25px 21px;
+    background-size: 78px 16px;
+    background-repeat: no-repeat;
+
+}
+
+.warnamesgreen {
+    background-color: rgb(78, 255, 120);
+}
+
+.warnamesblue {
+    background-color: rgba(38, 32, 255, 0.59);
+}
+
+.shit p:after {
+    display: inline;
+    content: url("/plan.gif");
+}
+
+.test {
+    display: inline-block;
+}
+.test li{
+    display: inline-block;
+}
