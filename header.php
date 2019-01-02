@@ -18,5 +18,6 @@
         <li><a href="/wartable.php">Состояние войны</a></li>
         <li><a href="/titan.php">Титан</a></li>
         <li><a href="/playersheroes.php">Силы игроков</a></li>
+        <li><a href="/admin.php">Админка</a></li>
     </ul>
 </header>

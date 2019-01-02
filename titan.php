@@ -17,9 +17,10 @@ include_once __DIR__ . '/simplePDOFunc.php';
         function funcSuccess(data) {
             var txt = data.split(".")[0];
             var points = data.split(".")[1];
+            var titanHp = 2574000-txt;
 
 
-            $("#enemypoints").text(txt);
+            $("#enemypoints").text(titanHp);
             $("#ourpoints").text(points);
 
         }
@@ -31,7 +32,7 @@ include_once __DIR__ . '/simplePDOFunc.php';
         $.ajax({
             url: "titanEdit.php",
             type: "GET",
-            data: ({damage: input.value, player: input.className, titanname: "Титан 26.12", inputId: input.id}),
+            data: ({damage: input.value, player: input.className, titanname: "Титан 29.12", inputId: input.id}),
             dataType: "html",
             beforeSend: funcBefore,
             error: funcError,

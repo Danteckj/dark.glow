@@ -5,11 +5,8 @@ include_once __DIR__ . '/header.php';
 include_once __DIR__ . '/simplePDOFunc.php';
 
 
-
 ini_set('display_errors', 'Off');
 error_reporting('E_ALL');
-
-
 
 
 function pageWarGenerator()
@@ -22,22 +19,23 @@ function pageWarGenerator()
     $warname = [
         'date' => $xml->warName
     ];
-    $enemyPoints = 1916;
+    $enemyPoints = 1340;
 
-    $ourPointss = numsqlins("SELECT SUM(damage) FROM War WHERE  war_date = '".$warname['date']."'")  ? numsqlins("SELECT SUM(damage) FROM War WHERE  war_date = '".$warname['date']."'") : 0;
-    $avgDamage = numsqlins("SELECT AVG(damage) FROM War WHERE war_date = '".$warname['date']."'")  ?numsqlins("SELECT AVG(damage) FROM War WHERE war_date = '".$warname['date']."'") : 0;
+    $ourPointss = numsqlins("SELECT SUM(damage) FROM War WHERE  war_date = '" . $warname['date'] . "'") ? numsqlins("SELECT SUM(damage) FROM War WHERE  war_date = '" . $warname['date'] . "'") : 0;
+    $avgDamage = numsqlins("SELECT AVG(damage) FROM War WHERE war_date = '" . $warname['date'] . "'") ? numsqlins("SELECT AVG(damage) FROM War WHERE war_date = '" . $warname['date'] . "'") : 0;
     $points = $enemyPoints - $ourPointss;
-    $sneaks = $points / $avgDamage;
-    $haveSneaks = 120 - numsqlins("SELECT COUNT(*) FROM War WHERE war_date ='".$warname['date']."'");
+    $sneaks = (int)($points / $avgDamage);
+    $haveSneaks = (int)(120 - numsqlins("SELECT COUNT(*) FROM War WHERE war_date ='" . $warname['date'] . "'"));
 
     include __DIR__ . '/pointstable.html';
     echo '<ul>';
-    playersSotaGenerator($players,$warname,'War', war_date);
+    playersSotaGenerator($players, $warname, 'War', war_date);
     echo '<ul>';
 }
 
 
-function pageTitanGenerator(){
+function pageTitanGenerator()
+{
 
     include __DIR__ . '/titantable.html';
     $xml = simplexml_load_file(__DIR__ . "/titanpage.xml");
@@ -45,31 +43,37 @@ function pageTitanGenerator(){
     foreach ($xml->Player as $player) {
         array_push($players, $player);
     }
-    $titanname =[
-        'date'=> $xml->titanName
+    $titanname = [
+        'date' => $xml->titanName
     ];
     echo '<ul>';
-    playersSotaGenerator($players,$titanname,'Titan', 'titan_date');
+    playersSotaGenerator($players, $titanname, 'Titan', 'titan_date');
     echo '<ul>';
 }
 
 
-
-
-function playersSotaGenerator ($players, $date, $table,$secondParametr){
+function playersSotaGenerator($players, $date, $table, $secondParametr)
+{
     foreach ($players as $player) {
-        echo "<label>" . $player . "</label>" . "<br>";
+        echo "<p class=\"but\">" . $player . "</p>";
+        $id=str_replace(" ", "", $player);
+        $idAvgDamage= $id.'avgDamage';
+        $idMaxDamage= $id.'maxDamage';
+        $avgDamage = numsqlins("SELECT AVG(damage) FROM " . $table . " WHERE player_name = '" . $player . "' AND " . $secondParametr . " = '" . $date['date'] . "'");
+        $maxDamage = numsqlins("SELECT SUM(damage) FROM " . $table . " WHERE player_name = '" . $player . "' AND " . $secondParametr . " = '" . $date['date'] . "'");
+        include __DIR__ . '/liiin.html';
 
         try {
             $pdo = pdoCreate();
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-            $query = "SELECT * FROM " . $table . " WHERE player_name = '" . $player . "' AND ".$secondParametr." = '" . $date['date'] . "' LIMIT 6";
+            $query = "SELECT * FROM " . $table . " WHERE player_name = '" . $player . "' AND " . $secondParametr . " = '" . $date['date'] . "' LIMIT 6";
             $response = $pdo->query($query);
             $response->setFetchMode(PDO::FETCH_ASSOC);
             $indexx = 0;
             $inputIdindex = 0;
             foreach ($response as $item) {
+
                 $indexx++;
                 $inputIdindex++;
                 echo $inputIdindex;
@@ -77,6 +81,7 @@ function playersSotaGenerator ($players, $date, $table,$secondParametr){
             }
 
             for ($index = 0; $index < 6 - $indexx; $index++) {
+
                 $inputIdindex++;
                 echo $inputIdindex;
                 $item['damage'] = '';
@@ -86,4 +91,5 @@ function playersSotaGenerator ($players, $date, $table,$secondParametr){
         } catch (PDOException $e) {
             $e->getMessage();
         }
-    }}
+    }
+}

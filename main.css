@@ -1,20 +1,19 @@
 
 body{
-    background-image: url("/oboik.ru_34657.jpg");
-    background-size:cover ;
-    background-repeat: no-repeat;
-}
+    background-image: url("/fon.jpg");
+    background-size:auto ;
+    background-repeat: repeat;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.68) , rgba(189, 72, 255, 0.4));
+  }
 /* Хэдэр */
-header{
-    background-color: rgba(5, 10, 5, 0.98);
-}
+
 
 .headerImg {
 
     height: 300px;
     text-align: center;
     background-position: center;
-    background-size: contain;
+    background-size: auto;
     background-repeat: no-repeat;
     background-image: url("/header.png");
 }
@@ -22,7 +21,7 @@ header{
 /* Меню в хэдэре */
 .pages_menu  {
   /* background-color: rgba(245, 245, 220, 0.67);
-    */border: solid black 1px;
+   */
     text-align: center;
 
 }
@@ -85,6 +84,8 @@ background-image: url("Skeleton-Head-Free-PNG-Image.png");
 .footer {
 
     background-color: rgb(115, 147, 108);
+    background: linear-gradient(to bottom, rgba(139, 0, 213, 0.4) 1%, rgba(2, 20, 255, 0.19) 81%) 10%;
+
 }
 
 
@@ -256,4 +257,14 @@ background-image: url("Skeleton-Head-Free-PNG-Image.png");
 }
 .test li{
     display: inline-block;
+}
+
+.but {
+    text-align: center;
+    height: 41px;
+    width: 178px;
+    background-image: url(/menubatton3.png);
+    background-size: 205px 82px;
+    background-repeat: no-repeat;
+    background-position: -10px -31px;
 }

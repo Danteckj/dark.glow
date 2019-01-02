@@ -40,7 +40,12 @@ if ($pdomassive['input_id'] <= $sneakCount) {
 
 $avgDamge = numsqlins("SELECT AVG(damage) FROM War WHERE war_date = '" . $pdomassive['war_date'] . "'");
 $sneaks = 120 - numsqlins("SELECT COUNT(*) FROM War WHERE war_date = '" . $pdomassive['war_date'] . "'");
-echo $sneaks . '.' . numsqlins("SELECT SUM(damage) FROM War WHERE  war_date = '" . $pdomassive['war_date'] . "'") . '.' . $avgDamge;
+$id=str_replace(" ", "", $pdomassive['player_name']);
+$idAvgDamage= $id.'avgDamage';
+$idMaxDamage= $id.'maxDamage';
+//$playerAvgDamage = numsqlins("SELECT AVG(damage) FROM War WHERE player_name = '" . $pdomassive['player_name'] . "' AND war_date = '" . $pdomassive['war_date']."'");
+//$playerMaxDamage = numsqlins("SELECT SUM(damage) FROM War WHERE player_name = '" . $pdomassive['player_name'] . "' AND war_date = '" . $pdomassive['war_date']."'");
+echo $sneaks . '.' . numsqlins("SELECT SUM(damage) FROM War WHERE  war_date = '" . $pdomassive['war_date'] . "'") . '.' . $avgDamge . '.' . $idAvgDamage .'.'.$idMaxDamage ;
 unset($pdomassive);
 
 

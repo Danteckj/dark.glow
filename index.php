@@ -2,7 +2,7 @@
 <H1>Shit</H1>
 
 <?php
-    if (isset($_GET['warseetname'])) echo "<h1>".$_GET['warseetname']  ."</h1>"
+  echo "<h1>".var_dump($_GET)  ."</h1>"
 
 ?>
 <!--

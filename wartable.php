@@ -10,22 +10,25 @@ include_once __DIR__ . '/simplePDOFunc.php'
     function sendData(input) {
 
 
-
         function funcBefore() {
-                   }
+        }
 
         function funcSuccess(data) {
             var txt = data.split(".")[0];
             var points = data.split(".")[1];
             var avgDamage = data.split(".")[2];
-            var minus = '<?php echo  $enemyPoints=1916; ?>'-points;
-            var need = minus/avgDamage;
+
+            var minus = '<?php echo $enemyPoints = 1340; ?>' - points;
+            var need = parseInt(minus / avgDamage);
+
 
             $("#ourpoints").text(points);
             $("#result").text(txt);
             $("#minusPoints").text(minus);
             $("#avgdamage").text(avgDamage);
             $("#needSneak").text(need);
+
+
         }
 
         function funcError() {
@@ -35,7 +38,7 @@ include_once __DIR__ . '/simplePDOFunc.php'
         $.ajax({
             url: "tableEdit.php",
             type: "GET",
-            data: ({damage: input.value, player: input.className, warname: "Война 26.12", inputId: input.id}),
+            data: ({damage: input.value, player: input.className, warname: "Война 2.1", inputId: input.id}),
             dataType: "html",
             beforeSend: funcBefore,
             error: funcError,
@@ -50,17 +53,7 @@ include_once __DIR__ . '/simplePDOFunc.php'
 <?php
 
 
-
-
 pageWarGenerator();
-
-
-
-
-
-
-
-
 
 
 ?>

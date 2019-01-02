@@ -1,18 +1,58 @@
 <?php
-include_once __DIR__ . '/simplePDOFunc.php';
-try {
-$pdo = pdoCreate();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$query = 'SELECT * FROM Playersheroes';
-$response = $pdo->query($query);
-$response->setFetchMode(PDO::FETCH_ASSOC);
-var_dump($response);
-    foreach ($response as $item){
-        echo $item[name];
-    }
+/**
+ * Created by PhpStorm.
+ * User: Dante
+ * Date: 14.12.2018
+ * Time: 12:30
+ */
+include __DIR__ . '/simplePDOFunc.php';
+
+
+$pdomassive = [
+    'id' => NULL,
+    'war_date' => 'Война 29.12',
+
+    'damage' => '1111',
+    'player_name' => 'Angel',
+    'input_id' => '1'
+];
+
+$sneakCount = numsqlins("SELECT COUNT(*) FROM War WHERE player_name = '" . $pdomassive['player_name'] . "' AND war_date = '" . $pdomassive['war_date'] . "'");
+if ($pdomassive['input_id'] <= $sneakCount) {
+    sqlSimpleInsert("UPDATE War SET damage =" . $pdomassive['damage'] . " WHERE ID=
+                                  (
+                                    SELECT id FROM (
+(SELECT id FROM War WHERE player_name = '" . $pdomassive['player_name'] . "' AND war_date = '" . $pdomassive['war_date'] . "'  ORDER BY id ASC  LIMIT " . $pdomassive['input_id'] . " )) AS t2  ORDER BY id DESC LIMIT 1
+                                  )");
+
+
+} else {
+
+    $ins = [
+        'id' => NULL,
+        'war_date' => $pdomassive['war_date'],
+        'damage' => $pdomassive['damage'],
+        'player_name' => $pdomassive['player_name']
+    ];
+    sqlInsertInTable($query = "INSERT INTO `War`" . "VALUES(:id,:war_date,:damage,:player_name)", $ins);
+    unset($ins);
 }
 
-catch (PDOException $e) {
-$e->getMessage();
+$avgDamge = numsqlins("SELECT AVG(damage) FROM War WHERE war_date = '" . $pdomassive['war_date'] . "'");
+$sneaks = 120 - numsqlins("SELECT COUNT(*) FROM War WHERE war_date = '" . $pdomassive['war_date'] . "'");
+$id=str_replace(" ", "", $pdomassive['player_name']);
+$idAvgDamage= $id.'avgDamage';
+$idMaxDamage= $id.'maxDamage';
+//$playerAvgDamage = numsqlins("SELECT AVG(damage) FROM War WHERE player_name = '" . $pdomassive['player_name'] . "' AND war_date = '" . $pdomassive['war_date']."'");
+//$playerMaxDamage = numsqlins("SELECT SUM(damage) FROM War WHERE player_name = '" . $pdomassive['player_name'] . "' AND war_date = '" . $pdomassive['war_date']."'");
+echo $sneaks . '.' . numsqlins("SELECT SUM(damage) FROM War WHERE  war_date = '" . $pdomassive['war_date'] . "'") . '.' . $avgDamge . '.' . $idAvgDamage .'.'.$idMaxDamage ;
+unset($pdomassive);
 
-}
+
+
+
+
+
+
+
+
